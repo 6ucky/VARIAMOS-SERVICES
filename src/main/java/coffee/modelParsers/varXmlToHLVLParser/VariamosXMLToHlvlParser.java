@@ -173,7 +173,8 @@ public class VariamosXMLToHlvlParser implements IHlvlParser {
 
 		for (Entry<String, Element> entry : xmlElements.entrySet()) {
 			String name = getValidName(entry.getValue().getName());
-			if (!name.equals("bundle")) {
+			String type = getValidName(entry.getValue().getType());
+			if (!type.equals("bundle")) {
 				HlvlCode.append(TAB + rules.getElement(name));
 			}
 		}
